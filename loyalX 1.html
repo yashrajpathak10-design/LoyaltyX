@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoyaltyX - Digital Excellence</title>
+
+  <style>
+    /* ------------------------------
+       LoyaltyX - Professional Styling
+    --------------------------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(180deg, #0a0f1f, #111836);
+      color: #f5f7fa;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      transition: all 0.3s ease;
+      padding: 15px 0;
+    }
+
+    header.scrolled {
+      background: rgba(20, 25, 50, 0.9);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      float: left;
+      font-size: 1.8rem;
+      color: #4ac1ff;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      float: right;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #f5f7fa;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #4ac1ff;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #111836, #0a0f1f);
+      color: #fff;
+      padding: 0 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .hero-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-section p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      color: #d0d4e4;
+    }
+
+    .cta-button {
+      background: linear-gradient(90deg, #4ac1ff, #8a4eff);
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px rgba(74, 193, 255, 0.7);
+    }
+
+    /* Content Sections */
+    .content-section {
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .content-section h3 {
+      color: #4ac1ff;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .content-section p {
+      color: #c5c9e2;
+      font-size: 1.05rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Team Section */
+    .team-member {
+      background: rgba(255, 255, 255, 0.05);
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 700px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      transform: translateY(50px);
+      opacity: 0;
+      transition: all 0.8s ease-out;
+    }
+
+    .team-member.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .team-member h4 {
+      color: #8a4eff;
+      font-size: 1.4rem;
+    }
+
+    .team-member h5 {
+      color: #4ac1ff;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0a0f1f;
+      text-align: center;
+      padding: 40px 20px;
+      color: #888;
+      position: relative;
+    }
+
+    footer p {
+      margin-bottom: 10px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .icon-link {
+      color: #4ac1ff;
+      text-decoration: none;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .icon-link:hover {
+      color: #8a4eff;
+      transform: scale(1.1);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    .animate-on-scroll.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header">
+    <div class="container">
+      <h1>LoyaltyX</h1>
+      <nav>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about-mission">Mission</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero" class="hero-section">
+    <div class="container">
+      <h2 class="animate-on-load">LoyaltyX: Building Digital Excellence Through Expert Craftsmanship.</h2>
+      <p class="animate-on-load">Your professional partner for flawless web development, captivating video content, and specialized sports coaching.</p>
+      <button class="cta-button animate-on-load">Meet Our Experts</button>
+    </div>
+  </section>
+
+  <section id="about-mission" class="content-section">
+    <div class="container">
+      <h3>Our Mission</h3>
+      <p>LoyaltyX is committed to quality, trust, and professional results across our three core service pillars. We blend technical mastery with strategic insight to ensure every client achieves their vision, built on a foundation of robust code, creative excellence, and proven expertise.</p>
+    </div>
+  </section>
+
+  <section id="team" class="content-section">
+    <div class="container">
+      <h3>The LoyaltyX Team</h3>
+
+      <div class="team-member animate-on-scroll">
+        <h4>Yash Raj</h4>
+        <h5>Lead HTML Web Developer & Digital Architect</h5>
+        <p>Yash Raj is a dedicated <strong>Professional HTML Web Developer</strong> with a passion for creating clean, efficient, and responsive digital experiences. As a core member of LoyaltyX, he ensures every project is built on a foundation of robust code, delivering flawless functionality and modern design standards that define professionalism.</p>
+      </div>
+
+      <div class="team-member animate-on-scroll">
+        <h4>Nitesh</h4>
+        <h5>Professional Video Editor & VFX Specialist</h5>
+        <p>Nitesh brings visual stories to life. A <strong>Professional Editor</strong> with comprehensive training in every editing course from basic to advanced, Nitesh excels at complex tasks—from sophisticated VFX integration and seamless video cutting to dynamic multi-screen compositions. His expert knowledge ensures premium, cinema-quality content for all LoyaltyX clients.</p>
+      </div>
+
+      <div class="team-member animate-on-scroll">
+        <h4>Sahil</h4>
+        <h5>Expert Cricket Coach & Performance Strategist</h5>
+        <p>Sahil is the strategic mind guiding future talent. A <strong>Professional Cricket Coach</strong>, he shares specialized knowledge on player development, fundamental techniques (batting, bowling, fielding), and game strategy. His insights are geared towards helping new players build a solid, professional foundation for a successful career in cricket.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <p>&copy; 2025 LoyaltyX. All Rights Reserved.</p>
+      <div class="contact-links">
+        <a href="#" class="icon-link animate-on-footer">Email Us</a>
+        <a href="#" class="icon-link animate-on-footer">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll effect
+    window.addEventListener("scroll", () => {
+      const header = document.getElementById("header");
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+
+    // Scroll-triggered animations
+    const scrollElements = document.querySelectorAll(".animate-on-scroll");
+
+    const scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          scrollObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    scrollElements.forEach((el) => scrollObserver.observe(el));
+
+    // Opening animation for hero section
+    window.addEventListener("load", () => {
+      const heroText = document.querySelectorAll(".animate-on-load");
+      heroText.forEach((el, i) => {
+        el.style.opacity = 0;
+        el.style.transform = "translateY(20px)";
+        setTimeout(() => {
+          el.style.transition = "opacity 1s ease, transform 1s ease";
+          el.style.transform = "translateY(0)";
+          el.style.opacity = 1;
+        }, i * 300);
+      });
+    });
+  </script>
+</body>
+</html>
+
+  
